@@ -6,9 +6,19 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    lookup = dict()
+
+    # Loop through tickets
+    for ticket in tickets:
+        # Add key as source and value as destination to table
+        lookup[ticket.source] = ticket.destination
+
+    # Build route with first location
+    route = [lookup["NONE"]]
+
+    # Get next location based on previous location 
+    for i in range(1,length):
+        # Add to route
+        route.append(lookup[route[i - 1]])
 
     return route
