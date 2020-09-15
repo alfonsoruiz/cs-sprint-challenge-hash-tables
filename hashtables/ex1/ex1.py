@@ -13,7 +13,3 @@ def get_indices_of_item_weights(weights, length, limit):
 
     # If pair doesn't exist return None
     return None
-
-print(get_indices_of_item_weights([9], 1, 9))
-print(get_indices_of_item_weights([4, 4], 2, 8))
-print(get_indices_of_item_weights([4, 6, 10, 15, 16], 5, 21))
