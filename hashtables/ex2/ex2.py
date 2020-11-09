@@ -6,9 +6,16 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    lookup = {}
+    route = []
+
+    for flight in tickets:
+        lookup[flight.source] = flight.destination
+
+    route.append(lookup['NONE'])
+
+    for i in range(1, length):
+        # lookup[route[i - 1]] returns the value of the key in lookup
+        route.append(lookup[route[i - 1]])
 
     return route

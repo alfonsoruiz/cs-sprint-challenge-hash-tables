@@ -1,8 +1,15 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    lookup = set()
+    result = []
+
+    for n in a:
+        if n < 0:
+            n = abs(n)
+
+        if n in lookup:
+            result.append(n)
+        else:
+            lookup.add(n)
 
     return result
 

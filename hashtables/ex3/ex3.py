@@ -1,8 +1,17 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    lookup = dict()
+    result = []
+
+    for arr in arrays:
+        for n in arr:
+            if n in lookup:
+                lookup[n] += 1
+            else:
+                lookup[n] = 1
+
+    for key, value in lookup.items():
+        if value == len(arrays):
+            result.append(key)
 
     return result
 
